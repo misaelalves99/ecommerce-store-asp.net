@@ -1,0 +1,31 @@
+﻿@model ECommerceStore.Models.Product
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Product/details.css" />
+}
+
+<div class="details-container">
+    <h1 class="details-title">@Model.Name</h1>
+
+    <div class="card details-card">
+        <div class="card-body">
+            <p><strong>Descrição:</strong> <span class="details-text">@Model.Description</span></p>
+            <p><strong>SKU:</strong> <span class="details-text">@Model.SKU</span></p>
+            <p><strong>Preço:</strong> <span class="details-text">@Model.Price.ToString("C")</span></p>
+            <p><strong>Estoque:</strong> <span class="details-text">@Model.Stock</span></p>
+            <p><strong>Categoria:</strong> <span class="details-text">@Model.Category?.Name ?? "N/A"</span></p>
+            <p><strong>Marca:</strong> <span class="details-text">@Model.Brand?.Name ?? "N/A"</span></p>
+            <p>
+                <strong>Status:</strong>
+                <span class="details-text status @(Model.IsActive ? "active" : "inactive")">
+                    @(Model.IsActive ? "Ativo" : "Inativo")
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <a asp-action="Index" class="btn btn-primary mt-4 details-back-btn">Voltar</a>
+</div>

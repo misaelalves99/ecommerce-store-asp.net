@@ -1,0 +1,30 @@
+﻿@model ECommerceStore.Models.Category
+
+@{
+    ViewData["Title"] = "Detalhes da Categoria";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Category/details.css" />
+}
+
+<div class="details-container">
+    <h1 class="details-title">@Model.Name</h1>
+
+    <div class="details-card">
+        <div class="card-body">
+            <p><span class="details-text">Descrição:</span> @(Model.Description ?? "Sem descrição")</p>
+            <p><span class="details-text">Categoria Pai:</span> @(Model.ParentCategory?.Name ?? "Nenhuma")</p>
+            <p><span class="details-text">Subcategorias:</span> @(Model.Subcategories?.Count() ?? 0)</p>
+            <p>
+                <span class="details-text">Status:</span>
+                <span class="status @(Model.IsActive ? "active" : "inactive")">
+                    @(Model.IsActive ? "Ativa" : "Inativa")
+                </span>
+            </p>
+            <p><span class="details-text">Criada em:</span> @Model.CreatedAt.ToString("dd/MM/yyyy")</p>
+        </div>
+    </div>
+
+    <a asp-action="Index" class="details-back-btn">Voltar</a>
+</div>

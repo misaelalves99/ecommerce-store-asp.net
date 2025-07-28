@@ -1,0 +1,119 @@
+﻿/* wwwroot/css/Product/create.css */
+
+/* Estrutura do formulário */
+form {
+    max-width: 680px;
+    margin: 2rem auto;
+    background-color: #f9f9f9;
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1f1f1f;
+}
+
+/* Rótulo de campos */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2e2e2e;
+}
+
+/* Inputs, textarea, select */
+.form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0.625rem 0.75rem;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    margin-bottom: 1rem;
+}
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.18rem rgba(13, 110, 253, 0.25);
+        outline: none;
+    }
+
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.55rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        transform: scale(1.03);
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        transform: scale(1.03);
+    }
+
+/* Mensagens de validação */
+.text-danger {
+    font-size: 0.9rem;
+    color: #dc3545;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    form {
+        padding: 1.25rem;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 0.75rem;
+        display: block;
+        width: 100%;
+    }
+
+    .btn-success {
+        width: 100%;
+    }
+}

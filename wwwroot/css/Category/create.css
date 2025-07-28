@@ -1,0 +1,76 @@
+﻿h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label.control-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input.form-control,
+textarea.form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.text-danger {
+    font-size: 0.875rem;
+}
+
+button.btn-success,
+a.btn-secondary {
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-block;
+}
+
+button.btn-success:hover {
+    background-color: #157347;
+    transform: scale(1.02);
+}
+
+a.btn-secondary:hover {
+    background-color: #5c636a;
+    transform: scale(1.02);
+}
+
+button + a {
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    form {
+        padding: 1rem;
+    }
+}

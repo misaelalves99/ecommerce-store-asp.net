@@ -1,0 +1,29 @@
+﻿@model ECommerceStore.Models.Brand
+
+@{
+    ViewData["Title"] = "Editar Marca";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Brand/edit.css" />
+}
+
+<h1 class="mb-4">Editar Marca</h1>
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Nome</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

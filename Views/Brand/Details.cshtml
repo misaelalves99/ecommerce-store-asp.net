@@ -1,0 +1,27 @@
+﻿@model ECommerceStore.Models.Brand
+
+@{
+    ViewData["Title"] = "Detalhes da Marca";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Brand/details.css" />
+}
+
+<div class="details-container">
+    <h1 class="details-title">@Model.Name</h1>
+
+    <div class="details-card">
+        <div class="card-body">
+            <p><strong>Descrição:</strong> <span class="details-text">@(Model.Description ?? "Sem descrição")</span></p>
+            <p>
+                <strong>Status:</strong>
+                <span class="details-text status @(Model.IsActive ? "active" : "inactive")">
+                    @(Model.IsActive ? "Ativa" : "Inativa")
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <a asp-action="Index" class="details-back-btn">Voltar</a>
+</div>

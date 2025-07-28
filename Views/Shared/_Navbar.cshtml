@@ -1,0 +1,31 @@
+﻿@* Importa o CSS específico para a navbar *@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
+    <div class="container-navbar">
+        <a class="navbar-brand d-flex align-items-center gap-2" asp-controller="Home" asp-action="Index">
+            <img src="https://via.placeholder.com/40" alt="Ecommerce" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Product" asp-action="Index">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Category" asp-action="Index">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Brand" asp-action="Index">Marcas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

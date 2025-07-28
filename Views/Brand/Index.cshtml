@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ECommerceStore.Models.Brand>
+
+@{
+    ViewData["Title"] = "Marcas";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Brand/index.css" />
+}
+
+<h1>Marcas</h1>
+
+<div class="text-center mb-3">
+    <a asp-action="Create" class="btn btn-primary">Adicionar Marca</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data de Criação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var brand in Model)
+        {
+            <tr>
+                <td>@brand.Name</td>
+                <td>@brand.CreatedAt.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@brand.Id" class="btn btn-sm btn-info">Detalhes</a>
+                    <a asp-action="Edit" asp-route-id="@brand.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@brand.Id" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

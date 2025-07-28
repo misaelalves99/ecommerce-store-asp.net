@@ -1,0 +1,42 @@
+﻿@model ECommerceStore.Models.Category
+
+@{
+    ViewData["Title"] = "Excluir Categoria";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Category/delete.css" />
+}
+
+<div class="container delete-container">
+    <div class="card delete-card">
+        <div class="card-header delete-card-header">
+            <h4 class="mb-0">Confirmar Exclusão</h4>
+            <a asp-action="Index" class="btn btn-outline-light btn-sm">Voltar</a>
+        </div>
+
+        <div class="card-body">
+            <p class="delete-warning">
+                Tem certeza que deseja excluir a categoria abaixo? Esta ação não poderá ser desfeita.
+            </p>
+
+            <dl class="row delete-details mb-4">
+                <dt class="col-sm-3">Nome da Categoria:</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+            </dl>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="delete-actions">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash3-fill"></i> Excluir
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle"></i> Cancelar
+                    </a>
+                </div>
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+    </div>
+</div>

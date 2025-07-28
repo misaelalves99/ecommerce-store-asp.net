@@ -1,0 +1,61 @@
+﻿@model ECommerceStore.Models.Product
+
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Product/delete.css" />
+@* Assumindo que você terá um CSS específico para Product Delete, ou pode usar um genérico *@
+}
+
+<div class="container delete-container">
+    <div class="card delete-card">
+        <div class="card-header delete-card-header">
+            <h4 class="mb-0">Confirmar Exclusão</h4>
+            <a asp-action="Index" class="btn btn-outline-light btn-sm">Voltar para Produtos</a>
+        </div>
+
+        <div class="card-body">
+            <p class="delete-warning">
+                Tem certeza que deseja excluir o produto abaixo? Esta ação não poderá ser desfeita.
+            </p>
+
+            <dl class="row delete-details mb-4">
+                <dt class="col-sm-3">Nome do Produto:</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3">SKU:</dt>
+                <dd class="col-sm-9">@Model.SKU</dd>
+
+                <dt class="col-sm-3">Preço:</dt>
+                <dd class="col-sm-9">@Model.Price.ToString("C")</dd> @* Formata como moeda *@
+
+                <dt class="col-sm-3">Estoque:</dt>
+                <dd class="col-sm-9">@Model.Stock</dd>
+
+                @* Adicione mais detalhes do produto conforme necessário *@
+                <dt class="col-sm-3">Categoria:</dt>
+                <dd class="col-sm-9">@(Model.Category?.Name ?? "N/A")</dd> @* Exibe o nome da categoria, se houver *@
+
+                <dt class="col-sm-3">Marca:</dt>
+                <dd class="col-sm-9">@(Model.Brand?.Name ?? "N/A")</dd> @* Exibe o nome da marca, se houver *@
+
+            </dl>
+
+            <form asp-action="Delete" method="post">
+                @* O ActionName "Delete" no Controller já mapeia para DeleteConfirmed *@
+                <input type="hidden" asp-for="Id" />
+                <div class="delete-actions">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash3-fill"></i> Excluir
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle"></i> Cancelar
+                    </a>
+                </div>
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+    </div>
+</div>

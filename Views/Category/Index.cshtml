@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ECommerceStore.Models.Category>
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Category/index.css" />
+}
+
+<h1>Categorias</h1>
+
+<a asp-action="Create" class="btn btn-primary">Adicionar Categoria</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Data de Criação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>@category.CreatedAt.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@category.Id" class="btn btn-sm btn-info me-1">Detalhes</a>
+                    <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-warning me-1">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,117 @@
+﻿/* wwwroot/css/Brand/index.css */
+
+/* Título principal */
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Botão "Nova Marca" */
+a.btn-primary {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+}
+
+    a.btn-primary:hover {
+        background-color: #0b5ed7;
+        transform: scale(1.02);
+    }
+
+/* Tabela */
+.table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+    .table thead {
+        background-color: #e2e2e2;
+        color: #fff;
+    }
+
+        .table thead th {
+            font-weight: 600;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+    .table tbody tr {
+        transition: background-color 0.2s;
+    }
+
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+    .table td {
+        padding: 0.75rem;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+/* Botões de ação */
+
+.btn-sm {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+    .btn-sm:hover {
+        transform: scale(1.05);
+    }
+
+.btn-info {
+    color: #fff;
+    background-color: #0dcaf0;
+    border: none;
+}
+
+    .btn-info:hover {
+        background-color: #0bb5d4;
+    }
+
+.btn-warning {
+    color: #fff;
+    background-color: #ffc107;
+    border: none;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+    }
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+}
+
+    .btn-danger:hover {
+        background-color: #bb2d3b;
+    }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.95rem;
+    }
+
+    .btn-sm {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}

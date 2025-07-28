@@ -1,0 +1,63 @@
+﻿@model ECommerceStore.Models.Product
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "Editar Produto";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Product/edit.css" />
+}
+
+<h1>Editar Produto</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Nome</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="Description" class="control-label">Descrição</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="SKU" class="control-label">SKU</label>
+        <input asp-for="SKU" class="form-control" />
+        <span asp-validation-for="SKU" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="Price" class="control-label">Preço</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="Stock" class="control-label">Estoque</label>
+        <input asp-for="Stock" class="form-control" />
+        <span asp-validation-for="Stock" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label class="control-label">Categoria</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name", Model.CategoryId))"></select>
+    </div>
+
+    <div class="form-group mt-2">
+        <label class="control-label">Marca</label>
+        <select asp-for="BrandId" class="form-control" asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name", Model.BrandId))"></select>
+    </div>
+
+    <div class="form-check mt-2">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label">Ativo</label>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

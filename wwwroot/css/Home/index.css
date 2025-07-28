@@ -1,0 +1,18 @@
+﻿/* Caminho: wwwroot/css/Home/index.css */
+body {
+    background-color: #f9f9f9;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+}
+
+    .btn:hover {
+        transform: scale(1.05);
+    }

@@ -1,0 +1,23 @@
+﻿@model ECommerceStore.Models.Category
+@{
+    ViewData["Title"] = "Editar Categoria";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Category/edit.css" />
+}
+
+<h1>Editar Categoria</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Nome</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

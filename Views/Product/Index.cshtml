@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ECommerceStore.Models.Product>
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Product/index.css" />
+}
+
+<h1>Produtos</h1>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Adicionar Produto</a>
+
+<table class="table table-striped table-hover shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>SKU</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Categoria</th>
+            <th>Marca</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.SKU</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.Stock</td>
+                <td>@product.Category?.Name</td>
+                <td>@product.Brand?.Name</td>
+                <td>
+                    <span class="badge @(product.IsActive ? "bg-success" : "bg-secondary")">
+                        @(product.IsActive ? "Ativo" : "Inativo")
+                    </span>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-info btn-sm me-1">Detalhes</a>
+                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
